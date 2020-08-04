@@ -7,4 +7,4 @@ if exists('loaded_code2img')
 endif
 let g:loaded_code2img = 1
 
-command -nargs=1 -range Code2img call code2img#toimg('<line1>', '<line2>', <f-args>)
+command! -nargs=* -range -complete=customlist,code2img#complete Code2img call code2img#toimg('<line1>', '<line2>', <f-args>)
