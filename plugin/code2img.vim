@@ -17,4 +17,4 @@ let g:loaded_code2img = 1
 command! -range Code2img call code2img#toimg(<line1>, <line2>)
 
 nnoremap <silent> <Plug>(Code2img) :<C-u>Code2img<CR>
-vnoremap <silent> <Plug>(Code2img) :Code2img<CR>
+xnoremap <silent> <Plug>(Code2img) :Code2img<CR>
