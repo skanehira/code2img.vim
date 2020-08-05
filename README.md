@@ -18,8 +18,8 @@ The Vim plugin that can generate image of source code.
 e.g dein.vim
 
 ```toml
-[[plugin]]
-repo = 'github.com/skanehira/code2img.vim'
+[[plugins]]
+repo = 'skanehira/code2img.vim'
 ```
 
 ## Author
