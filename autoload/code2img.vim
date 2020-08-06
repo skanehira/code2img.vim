@@ -42,22 +42,12 @@ function! code2img#toimg(first, last, ...) abort
   let theme = get(g:, 'code2img_theme', 'solarized-dark')
 
   let cmd = ['code2img', '-t', theme, '-ext', &ft]
+  let cmd += a:0 is# 0 ? ['-c'] : ['-o', a:1]
 
-  if a:0 is# 0
-    let cmd += ['-c']
-    call job_start(cmd, {
-          \ 'in_io': 'file',
-          \ 'in_name': tmp,
-          \ 'err_cb': function('s:on_err_vim'),
-          \ 'exit_cb': function('s:exit_cb', [tmp])
-          \ })
-  else
-    let cmd += ['-o', a:1]
-    call job_start(cmd, {
-          \ 'in_io': 'file',
-          \ 'in_name': tmp,
-          \ 'err_cb': function('s:on_err_vim'),
-          \ 'exit_cb': function('s:exit_cb', [tmp])
-          \ })
-  endif
+  call job_start(cmd, {
+        \ 'in_io': 'file',
+        \ 'in_name': tmp,
+        \ 'err_cb': function('s:on_err_vim'),
+        \ 'exit_cb': function('s:exit_cb', [tmp])
+        \ })
 endfunction
