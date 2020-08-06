@@ -16,7 +16,7 @@ function! s:exit_cb(tmp, ch, msg) abort
   call delete(a:tmp)
 endfunction
 
-function! code2img#toimg(first, last) abort
+function! code2img#toimg(first, last, ...) abort
   if !executable('code2img')
     call s:echo_err('not found code2img. please install from https://github.com/skanehira/code2img')
     return
@@ -37,15 +37,27 @@ function! code2img#toimg(first, last) abort
   endif
 
   let tmp = printf("%s.%s", tempname(), &ft)
-
   call writefile(lines, tmp)
 
-  let cmd = ['code2img', '-ext', &ft, '-c', '-t', get(g:, 'code2img_theme', 'solarized-dark')]
+  let theme = get(g:, 'code2img_theme', 'solarized-dark')
 
-  call job_start(cmd, {
-        \ 'err_cb': function('s:on_err_vim'),
-        \ 'in_io': 'file',
-        \ 'in_name': tmp,
-        \ 'exit_cb': function('s:exit_cb', [tmp])
-        \ })
+  let cmd = ['code2img', '-t', theme, '-ext', &ft]
+
+  if a:0 is# 0
+    let cmd += ['-c']
+    call job_start(cmd, {
+          \ 'in_io': 'file',
+          \ 'in_name': tmp,
+          \ 'err_cb': function('s:on_err_vim'),
+          \ 'exit_cb': function('s:exit_cb', [tmp])
+          \ })
+  else
+    let cmd += ['-o', a:1]
+    call job_start(cmd, {
+          \ 'in_io': 'file',
+          \ 'in_name': tmp,
+          \ 'err_cb': function('s:on_err_vim'),
+          \ 'exit_cb': function('s:exit_cb', [tmp])
+          \ })
+  endif
 endfunction
