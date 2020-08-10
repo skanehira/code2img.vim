@@ -42,6 +42,7 @@ function! code2img#toimg(first, last, ...) abort
   let theme = get(g:, 'code2img_theme', 'solarized-dark')
 
   let cmd = ['code2img', '-t', theme, '-ext', &ft]
+  let cmd += g:code2img_line is# 0 ? [] : ['-l']
   let cmd += a:0 is# 0 ? ['-c'] : ['-o', a:1]
 
   call job_start(cmd, {
