@@ -13,6 +13,7 @@ if exists('loaded_code2img')
   finish
 endif
 let g:loaded_code2img = 1
+let g:code2img_line = 0
 
 command! -nargs=? -range Code2img call code2img#toimg(<line1>, <line2>, <f-args>)
 
