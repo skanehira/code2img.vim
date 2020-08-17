@@ -43,8 +43,7 @@ function! code2img#toimg(first, last, ...) abort
 
   let cmd = ['code2img', '-t', theme, '-ext', &ft]
 
-  let line = get(g:, 'code2img_line_number', 0)
-  if line
+  if get(g:, 'code2img_line_number', 0)
     let cmd = cmd + ['-l']
   endif
 
