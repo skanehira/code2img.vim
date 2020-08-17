@@ -28,6 +28,7 @@ INTRODUCTION			|code2img-introduction|
 USAGE				|code2img-usage|
 INTERFACE			|code2img-interface|
   COMMANDS			  |code2img-commands|
+  VARIABLES			  |code2img-variables|
   KEY-MAPPINGS			  |code2img-key-mappings|
   FUNCTIONS			  |code2img-functions|
 TODO				|code2img-todo|
@@ -46,8 +47,6 @@ https://github.com/skanehira/code2img.vim
 ==============================================================================
 USAGE						*code2img-usage*
 
-
-
 ==============================================================================
 INTERFACE					*code2img-interface*
 
@@ -58,6 +57,18 @@ COMMANDS					*code2img-commands*
 	generate image of source code.
 	default will copy to clipboard.
 	if {file} is specified, create {file}
+
+------------------------------------------------------------------------------
+VARIABLES					*code2img-variables*
+
+g:code2img_theme				*g:code2img_theme*
+	set color scheme. default is 'solarized-dark'.
+	you can set those schmemes.
+	https://xyproto.github.io/splash/docs/all.html
+
+g:code2img_line_number				*g:code2img_line_number*
+	show line number. default is `0`.
+	if you want to show line number, please set `1`.
 
 ------------------------------------------------------------------------------
 KEY-MAPPINGS					*code2img-key-mappings*
@@ -79,6 +90,8 @@ TODO						*code2img-todo*
 
 ==============================================================================
 CHANGELOG					*code2img-changelog*
+2020/08/17	release v0.3.0
+			- add option |g:code2img_line_number|
 2020/08/06	release v0.2.0
 			- add args {out}
 2020/08/05	release v0.1.0

@@ -10,6 +10,12 @@ The Vim plugin that can generate image of source code.
 :'<,'>Code2img
 ```
 
+## Options
+| option               | value                     | descrie           |
+|----------------------|---------------------------|-------------------|
+| code2img_theme       | solarized-dark            | set color scheme  |
+| code2img_line_number | `0` or `1` (default: `0`) | print line number |
+
 ## Requirements
 - [code2img](https://github.com/skanehira/code2img)
 - xclip(linux only)
