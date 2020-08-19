@@ -1,4 +1,4 @@
-# code2img
+# code2img.vim
 The Vim plugin that can generate image of source code.
 
 ## Usage
