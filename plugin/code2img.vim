@@ -2,13 +2,6 @@
 " Author: skanehira
 " License: MIT
 
-if has('nvim')
-  echohl ErrorMsg
-  echo '[code2img.vim] doesn''t support neovim'
-  echohl None
-  finish
-endif
-
 if exists('loaded_code2img')
   finish
 endif

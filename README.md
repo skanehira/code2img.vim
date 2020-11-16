@@ -1,5 +1,5 @@
 # code2img.vim
-The Vim plugin that can generate image of source code.
+The Vim/Neovim plugin that can generate image of source code.
 
 ## Usage
 ```vim

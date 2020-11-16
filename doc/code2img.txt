@@ -1,4 +1,4 @@
-*code2img.txt*	a summary
+*code2img.txt*	The Vim/Neovim plugin that can generate image of source code.
 
 Author: skanehira <sho19921005@gmail.com>
 License : MIT license  {{{
@@ -38,7 +38,7 @@ CHANGELOG			|code2img-changelog|
 ==============================================================================
 INTRODUCTION					*code2img-introduction*
 
-*code2img* is a Vim plugin 
+*code2img* The Vim/Neovim plugin that can generate image of source code
 
 Latest version:
 https://github.com/skanehira/code2img.vim
@@ -90,6 +90,8 @@ TODO						*code2img-todo*
 
 ==============================================================================
 CHANGELOG					*code2img-changelog*
+2020/11/16	make work with Neovim
+
 2020/08/17	release v0.3.0
 			- add option |g:code2img_line_number|
 2020/08/06	release v0.2.0
